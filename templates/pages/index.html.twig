@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacto!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1 class="d-flex align-items-center justify-content-between mb-4">
+            Ejemplo Home
+
+            <a href="{{ path('app_post_create') }}" class="btn btn-primary btn-sm">+ Crear Post</a>
+        </h1>
+        <hr>
+        <table class="table table-striped">
+            <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.title }}</td>
+                    <td>
+                        <a href="{{ path('app_post_edit', {id: post.id}) }}">Editar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+{% endblock %}

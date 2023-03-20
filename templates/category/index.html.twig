@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorias!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1 class="d-flex align-items-center justify-content-between mb-4">
+            Lista de Categorias
+
+            <a href="{{ path('app_category_create') }}" class="btn btn-primary btn-sm">+ Crear Categoria</a>
+        </h1>
+        <hr>
+        <table class="table table-striped">
+            <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.name }}</td>
+                    <td>
+                        <a href="{{ path('app_category_edit', {id: category.id}) }}">Editar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+{% endblock %}
